@@ -12,7 +12,7 @@ abstract class Output extends \Nette\Object {
     protected $value;
 
     /**
-     * 
+     *
      * @param \Cothema\Numerals\Input\I\Input $value
      */
     public function __construct(\Cothema\Numerals\Input\I\Input $value) {
@@ -20,11 +20,11 @@ abstract class Output extends \Nette\Object {
     }
 
     /**
-     * 
+     *
      * @return string
      */
     public function __toString() {
-        return $this->getOutput();
+        return (string) $this->getOutput();
     }
 
 }

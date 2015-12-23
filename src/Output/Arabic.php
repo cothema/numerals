@@ -2,6 +2,8 @@
 
 namespace Cothema\Numerals\Output;
 
+use \Cothema\Numerals\Input;
+
 /**
  * Roman numerals
  *
@@ -9,8 +11,10 @@ namespace Cothema\Numerals\Output;
  */
 class Arabic extends A\Output implements I\Output {
 
+    use T\Table\RomanToArabic;
+
     /**
-     * 
+     *
      * @param \Cothema\Numerals\Input\I\Input $value
      */
     public function __construct(\Cothema\Numerals\Input\I\Input $value) {
@@ -18,7 +22,7 @@ class Arabic extends A\Output implements I\Output {
     }
 
     /**
-     * 
+     *
      * @return string
      */
     public function getOutput() {
@@ -26,21 +30,18 @@ class Arabic extends A\Output implements I\Output {
     }
 
     /**
-     * 
-     * @param integer $inputObject
+     *
+     * @param Input\Roman $inputObject
      * @return string
      */
-    private function convertRomanToArabic($inputObject) {
-        $input = (int) $inputObject->getValue();
-        $table = ['M' => 1000, 'CM' => 900, 'D' => 500, 'CD' => 400, 'C' => 100, 'XC' => 90, 'L' => 50, 'XL' => 40, 'X' => 10, 'IX' => 9, 'V' => 5, 'IV' => 4, 'I' => 1];
-        $return = '';
-        while ($input > 0) {
-            foreach ($table as $rom => $arb) {
-                if ($input >= $arb) {
-                    $input -= $arb;
-                    $return .= $rom;
-                    break;
-                }
+    private function convertRomanToArabic(Input\Roman $inputObject) {
+        $roman = (string) $inputObject->getValue();
+
+        $return = 0;
+        foreach ($this->getTableRomanToArabic() as $key => $value) {
+            while (strpos($roman, $key) === 0) {
+                $return += $value;
+                $roman = substr($roman, strlen($key));
             }
         }
 

@@ -1,0 +1,5 @@
+Cothema\Numerals\Output\Roman::__set_state(array(
+	'value' => Cothema\Numerals\Input\Arabic::__set_state(array(
+		'value' => 2,
+	)),
+))

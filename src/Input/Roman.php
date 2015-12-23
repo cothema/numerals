@@ -13,7 +13,7 @@ class Roman extends \Nette\Object implements I\Input {
     private $value;
 
     /**
-     * 
+     *
      * @param string $value
      */
     public function __construct($value = NULL) {
@@ -23,7 +23,7 @@ class Roman extends \Nette\Object implements I\Input {
     }
 
     /**
-     * 
+     *
      * @return string
      */
     public function getValue() {
@@ -31,7 +31,7 @@ class Roman extends \Nette\Object implements I\Input {
     }
 
     /**
-     * 
+     *
      * @param string $value
      */
     public function setValue($value) {
