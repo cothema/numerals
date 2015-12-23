@@ -1,6 +1,6 @@
 <?php
 
-namespace Cothema\Numerals\Output\T\Table;
+namespace Cothema\Numerals\Convertor\T\Table;
 
 /**
  * Roman to Arabic convert table

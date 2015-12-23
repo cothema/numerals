@@ -13,7 +13,7 @@ class Arabic extends \Nette\Object implements I\Input {
     private $value;
 
     /**
-     * 
+     *
      * @param integer $value
      */
     public function __construct($value = NULL) {
@@ -23,7 +23,15 @@ class Arabic extends \Nette\Object implements I\Input {
     }
 
     /**
-     * 
+     *
+     * @return string
+     */
+    public function getFormat() {
+        return 'Arabic';
+    }
+
+    /**
+     *
      * @return integer
      */
     public function getValue() {
@@ -31,7 +39,7 @@ class Arabic extends \Nette\Object implements I\Input {
     }
 
     /**
-     * 
+     *
      * @param integer $value
      */
     public function setValue($value) {

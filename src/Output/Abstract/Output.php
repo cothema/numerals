@@ -2,6 +2,8 @@
 
 namespace Cothema\Numerals\Output\A;
 
+use \Cothema\Numerals\Input;
+
 /**
  * Output abstract class
  *
@@ -13,9 +15,9 @@ abstract class Output extends \Nette\Object {
 
     /**
      *
-     * @param \Cothema\Numerals\Input\I\Input $value
+     * @param Input\I\Input $value
      */
-    public function __construct(\Cothema\Numerals\Input\I\Input $value) {
+    public function __construct(Input\I\Input $value) {
         $this->value = $value;
     }
 
@@ -25,6 +27,18 @@ abstract class Output extends \Nette\Object {
      */
     public function __toString() {
         return (string) $this->getOutput();
+    }
+
+    /**
+     *
+     * @param string $from
+     * @param string $to
+     * @param Input\I\Input $value
+     * @return string
+     */
+    protected function convert($from, $to, Input\I\Input $value) {
+        $class = sprintf('\\Cothema\\Numerals\\Convertor\\%s\\%s', $from, $to);
+        return (new $class($value))->output;
     }
 
 }

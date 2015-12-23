@@ -11,13 +11,10 @@ use \Cothema\Numerals\Input;
  */
 class Roman extends A\Output implements I\Output {
 
-    use T\Table\RomanToArabic;
-
     /**
-     *
-     * @param \Cothema\Numerals\Input\I\Input $value
+     * {@inheritdoc}
      */
-    public function __construct(\Cothema\Numerals\Input\I\Input $value) {
+    public function __construct(Input\I\Input $value) {
         parent::__construct($value);
     }
 
@@ -26,29 +23,7 @@ class Roman extends A\Output implements I\Output {
      * @return string
      */
     public function getOutput() {
-        return $this->convertArabicToRoman($this->value);
-    }
-
-    /**
-     *
-     * @param Input\Arabic $inputObject
-     * @return string
-     */
-    private function convertArabicToRoman(Input\Arabic $inputObject) {
-        $input = (int) $inputObject->getValue();
-
-        $return = '';
-        while ($input > 0) {
-            foreach ($this->getTableRomanToArabic() as $rom => $arb) {
-                if ($input >= $arb) {
-                    $input -= $arb;
-                    $return .= $rom;
-                    break;
-                }
-            }
-        }
-
-        return $return;
+        return $this->convert($this->value->format, 'Roman', $this->value);
     }
 
 }

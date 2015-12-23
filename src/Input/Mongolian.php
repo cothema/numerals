@@ -7,7 +7,7 @@ namespace Cothema\Numerals\Input;
  *
  * @author Miloš Havlíček <miloshavlicek@gmail.com>
  */
-class Roman extends \Nette\Object implements I\Input {
+class Mongolian extends \Nette\Object implements I\Input {
 
     /** @var string */
     private $value;
@@ -27,7 +27,7 @@ class Roman extends \Nette\Object implements I\Input {
      * @return string
      */
     public function getFormat() {
-        return 'Roman';
+        return 'Mongolian';
     }
 
     /**
