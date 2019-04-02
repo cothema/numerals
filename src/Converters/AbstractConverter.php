@@ -50,7 +50,7 @@ abstract class AbstractConverter implements ConverterInteface
      */
     public function convert(): InputInterface
     {
-        $inputClass = '\\Cothema\\Numerals\\Inputs\\' . self::getFormatName();
+        $inputClass = sprintf('\\Cothema\\Numerals\\Inputs\\%sInput', self::getFormatName());
         return new $inputClass($this->process($this->_value));
     }
 

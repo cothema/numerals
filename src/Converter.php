@@ -34,7 +34,7 @@ class Converter
      */
     public function setInput($input, string $format)
     {
-        $inputClass = '\\Cothema\\Numerals\\Inputs\\' . $format;
+        $inputClass = sprintf('\\Cothema\\Numerals\\Inputs\\%sInput', $format);
         $this->_input = new $inputClass($input);
     }
 
