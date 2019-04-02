@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Cothema\Numerals\Converter\Mongolian;
+namespace Cothema\Numerals\Converters\Mongolian;
 
 use Cothema\Numerals\ConversionTables\ArabicToMongolian;
 use Cothema\Numerals\Converters\AbstractConverter;

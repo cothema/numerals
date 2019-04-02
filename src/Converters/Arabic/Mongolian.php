@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Cothema\Numerals\Converter\Arabic;
+namespace Cothema\Numerals\Converters\Arabic;
 
 use Cothema\Numerals\Converters\AbstractConverter;
 

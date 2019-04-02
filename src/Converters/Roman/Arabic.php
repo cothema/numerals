@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Cothema\Numerals\Converter\Roman;
+namespace Cothema\Numerals\Converters\Roman;
 
 use Cothema\Numerals\ConversionTables\RomanToArabic;
 use Cothema\Numerals\Converters\AbstractConverter;
