@@ -10,7 +10,7 @@ use Cothema\Numerals\Outputs\OutputInterface;
  *
  * @author Miloš Havlíček <miloshavlicek@gmail.com>
  */
-abstract class AbstractConverter implements ConverterInteface
+abstract class AbstractConverter implements ConverterInterface
 {
 
     /** @var InputInterface */

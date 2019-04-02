@@ -54,7 +54,7 @@ class Converter
         }
 
         $converter = sprintf('\\Cothema\\Numerals\\Converters\\%s\\%s', $this->_input::getFormatName(), $format);
-        return (new $converter($this->input))->convert();
+        return (new $converter($this->_input))->convert();
     }
 
 }
