@@ -1,15 +1,17 @@
-<?php
+<?php declare(strict_types=1);
 
-namespace Cothema\Numerals\Convertor\T\Table;
+namespace Cothema\Numerals\ConversionTables;
 
 /**
- * Roman to Arabic convert table
+ * Roman to Arabic conversion table
  *
  * @author Miloš Havlíček <miloshavlicek@gmail.com>
  */
-trait RomanToArabic {
+class RomanToArabic implements ConversionTableInterface
+{
 
-    protected function getTableRomanToArabic() {
+    public static function getTable(): array
+    {
         return [
             'M' => 1000,
             'CM' => 900,

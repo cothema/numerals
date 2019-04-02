@@ -1,5 +1,8 @@
-/nbproject/
 vendor/
 composer.lock
 .actual
 .expected
+
+#IDEs
+.idea/
+nbproject/

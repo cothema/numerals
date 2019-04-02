@@ -1,15 +1,17 @@
-<?php
+<?php declare(strict_types=1);
 
-namespace Cothema\Numerals\Convertor\T\Table;
+namespace Cothema\Numerals\ConversionTables;
 
 /**
- * Roman to Arabic convert table
+ * Roman to Arabic conversion table
  *
  * @author Miloš Havlíček <miloshavlicek@gmail.com>
  */
-trait ArabicToMongolian {
+class ArabicToMongolian implements ConversionTableInterface
+{
 
-    protected function getTableArabicToMongolian() {
+    public static function getTable(): array
+    {
         return [
             '0' => '᠐',
             '1' => '᠑',
