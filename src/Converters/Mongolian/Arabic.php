@@ -29,7 +29,7 @@ class Arabic extends AbstractConverter
 
         $return = '';
         $table = array_flip(ArabicToMongolian::getTable());
-        foreach (self::utf8StrSplit($input) as $numeral) {
+        foreach (static::utf8StrSplit($input) as $numeral) {
             if (isset($table[$numeral])) {
                 $return .= $table[$numeral];
             } else {

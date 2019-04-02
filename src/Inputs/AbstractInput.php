@@ -56,8 +56,8 @@ abstract class AbstractInput implements InputInterface
      */
     public function setValue($value): void
     {
-        self::validate($value);
-        $value = self::format($value);
+        static::validate($value);
+        $value = static::format($value);
         $this->_value = $value;
     }
 

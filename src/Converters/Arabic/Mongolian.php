@@ -26,7 +26,7 @@ class Mongolian extends AbstractConverter
 
         $return = '';
         $table = ArabicToMongolian::getTable();
-        foreach (self::utf8StrSplit($input) as $numeral) {
+        foreach (static::utf8StrSplit($input) as $numeral) {
             if (isset($table[$numeral])) {
                 $return .= $table[$numeral];
             } else {
